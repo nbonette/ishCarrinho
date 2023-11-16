@@ -1,0 +1,86 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+<div class="container">
+    <div class="card mb-4">
+        <div class="card-header" style="
+                                     border: none;
+                                 ">
+            <h1 class="product-title" style="
+                                          text-align: center;
+                                          font-size: 30px;
+                                      ">Pagamento</h1>
+        </div>
+        <div class="card-body" >
+
+        <div class="card mb-4">
+
+                        <div class="card-body">
+                            <form action="/finalizar-pedido" method="post">
+                                <div class="form-check payment-box">
+                                    <input style="
+                                               margin: 5px;
+                                           " type="radio" class="form-check-input" id="cartao" name="metodoPagamento" value="cartao" checked>
+                                    <label class="form-check-label" for="cartao">
+                                        Cartão de Crédito/Débito
+                                    </label>
+                                </div>
+                                <div class="form-check payment-box">
+                                    <input style="
+                                               margin: 5px;
+                                           " type="radio" class="form-check-input" id="dinheiro" name="metodoPagamento" value="dinheiro">
+                                    <label class="form-check-label" for="dinheiro">
+                                        Dinheiro
+                                    </label>
+                                </div>
+                                <div class="form-check payment-box">
+                                    <input style="
+                                               margin: 5px;
+                                           " type="radio" class="form-check-input" id="pix" name="metodoPagamento" value="pix">
+                                    <label class="form-check-label" for="pix">
+                                        PIX
+                                    </label>
+                                </div>
+                                <!-- Adicione mais opções conforme necessário -->
+
+                    <div class="text-left" style="
+                                             
+                                               font-family: 'Abel', sans-serif;
+                                           ">
+                                        <a href="/compraFinalizada" class="btn btn-primary">FINALIZAR PEDIDO</a>
+                                    </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+            <!-- Card de Endereço de Entrega (Pode manter ou remover conforme necessário) -->
+            <div class="card mb-4">
+
+                <div class="card-body product-title">
+                    <p style="
+                           color: black;
+                       "><strong>Enviando para:</strong> Derick, Rua Tristão Lobo, 267, Centro...</p>
+                    <p style="
+                           color: black;
+                       " ></p>
+                    <p style="
+                           color: black;
+                       "><strong>FRETE:</strong> R$ 8,00</p>
+
+                </div>
+
+                <div class="card-body product-title">
+                                    
+
+                                </div>
+            </div>
+
+            <!-- Formulário de Pagamento com Botões de Rádio -->
+
+        </div>
+    </div>
+</div>
+
+<%- include ('partials/footer') %>

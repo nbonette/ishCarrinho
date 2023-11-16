@@ -1,0 +1,72 @@
+<%- include ('partials/header.ejs') %> <!--Esta carregando toda a página header-->
+<%- include ('partials/navbar.ejs') %> <!--Esta carregando toda a página navbar-->
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Cadastrar Produtos</h1>
+            <hr>
+            <form method="POST" action="createProduto">
+                <label>Nome do Produto:</label>
+                <input type="text" name="nome" id="nome" class="form-control">
+                                   
+                <label>Preço do Produto:</label>
+                <input type="number" name="preco" id="preco" class="form-control cpf">
+                
+                <label>Categoria do produto:</label>
+                <input type="text" name="categoria" id="categoria" class="form-control">
+                
+                <label>Quantidade do Produto:</label>
+                <input type="number" name="qtd" id="qtd" class="form-control">
+                  
+                <label>Unidade do Produto:</label>
+                <input type="text" name="unidade" id="unidade" class="form-control">
+                  
+                <label>Pescador do Produto:</label>
+                <input type="text" name="pescador" id="pescador" class="form-control">
+                  
+                <label>Imagem do Produto:</label>
+                <input type="text" name="img" id="img" class="form-control">
+                  
+                
+                <br>
+                <button class="btn btn-success">Cadastrar</button>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Produtos</h1>
+        </div>
+        <div class="card-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Imagem:</th>
+                        <th>Produto:</th>
+                        <th>Preço:</th>
+                        <th>Quantidade:</th>
+                        <th colspan="2" style="text-align: center;">Ações:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% produtos.forEach(produto => { %>
+                    <tr>
+                        <td><img src=<%= produto.img %> style="height: 100px; width: 160px;"></td>
+                        <td><%= produto.nome %></td>
+                        <td>R$<%= produto.preco %></td>
+                        <td><%= produto.qtd %><%= produto.unidade %></td>
+                        <td><a href="/produtos/<%= produto.id%>">Comprar</a></td>
+                        
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include ('partials/footer') %> <!--Esta carregando toda a página footer-->

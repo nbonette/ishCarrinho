@@ -1,0 +1,124 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+<br>
+<h3 style="font-family: 'Abel', sans-serif;
+             font-weight: 400;
+             font-size: 30px;
+             line-height: 19.12px;
+             margin-left:47%"><img src="https://static.vecteezy.com/ti/vetor-gratis/p3/583611-de-icone-de-localizacao-gr%C3%A1tis-vetor.jpg" style="height: 40px; width: 30px;">Cananeia - SP</h3>
+
+<div class="container mt-5">
+    <div class="input-group">
+      <span class="input-group-prepend">
+
+      </span>
+      <input type="text" class="form-control" placeholder="Busque o produto que deseja">
+
+    </div>
+  </div>
+
+  <br>
+<div class="container">
+    <div class="card mb-4">
+        <div class="card-header" style="
+                                     border: none;
+                                 ">
+            <h1 class="title">Carrinho</h1>
+        </div>
+        <div class="card-body">
+        <span class="hr-title"></span>
+            <!-- Listagem de Produtos -->
+            <% if (produtos.length > 0) { %>
+                <% produtos.forEach(produto => { %>
+                    <div class="card mb-4">
+                        <div class="row no-gutters ">
+                            <div class="col-md-4 box-imag">
+                                <img src=<%= produto.img %> style="height: 100px; width: 160px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="" style="
+                                                  margin-top: 23px;
+                                              ">
+                                    <span class=" card-title product-title">
+                                    <%= produto.nome %>
+                                     
+                                    </span>
+
+                                    <span class=" product-title card-text"> Pescador: <span style="
+                                                                                                color: black;
+                                                                                            "><%= produto.pescador %></span></span>
+
+                                 <span class=" product-title card-text"> <%= produto.unidade %> <span style="
+                                                                                                                                color: black;
+                                                                                                                            "><%= produto.qtd %><%= produto.unidade %></span></span>
+                                <span class=" product-title card-text"> TOTAL:  <% 
+                                    
+                                    const total = produto.qtd * produto.preco;
+                    
+                                    
+                                    const totalFormatado = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                    
+                                    // Exibe o total na página
+                                    %>
+                                <%= totalFormatado %><span style="
+                                                                                                                                                                color: black;
+                                                                                                                                                            "></span></span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+
+<!-- Card de Endereço de Entrega -->
+ <hr style="
+         color: #2C74B3;
+     ">
+            <div class="card mb-4">
+
+                <div class="card-body" style="
+                                           background-color: #D9FAFF;
+                                       ">
+                <h2 class="address-title" style="
+                                              color: #009EFF;">ENDEREÇO:</h2>
+                                              <br>
+                    <p class="address-title"><strong>RUA TRISTÃO LOBO, 267, CENTRO
+                               CANANEÍA, SP, 11990-000 </p>
+
+                </div>
+            </div>
+
+             <div class="card mb-4">
+
+                            <div class="card-body" style="
+                                                       background-color: #D9FAFF;
+                                                   ">
+                            <h2 class="address-title" style="
+                                                          color: #009EFF;">ADICIONAR OUTRO ENDEREÇO:</h2>
+                                                          <br>
+
+
+                            </div>
+                        </div>
+
+<div class="container mt-5">
+
+    <textarea placeholder="ADICIONAR COMENTÁRIO AO VENDEDOR" class="form-control" id="exampleTextarea" rows="3"></textarea>
+  </div>
+                <!-- Link para a página de pagamento -->
+                <hr>
+                <div class="text-left" style="
+                                           text-align: center;
+                                       ">
+                    <a href="/pagamento" class="btn btn-primary">IR PARA O PAGAMENTO</a>
+                </div>
+
+            <% } else { %>
+                <p>Nenhum produto disponível no carrinho.</p>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include ('partials/footer') %>

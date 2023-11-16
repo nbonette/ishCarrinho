@@ -1,0 +1,75 @@
+body {
+    background-color: #f1f1f1;
+}
+
+ul {
+    list-style: square;
+    line-height: 30px;
+}
+
+a {
+    color:#0ba7c6;
+    text-decoration: none;
+    padding: 20px;
+}
+
+th, td {
+    padding: 10px;
+}
+
+footer {
+    text-align: center;    
+}
+.title{
+    font-family: 'Abel', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30.59px;
+    color: #009EFF;
+    border-bottom: solid 2px;
+    width: 100px;
+    margin-left: 47%;
+}
+
+.box-card{
+    width: 320px;
+    height: 115px;
+    top: 173px;
+    left: 20px;
+    border-radius: 10px;
+}
+
+.box-imag{
+    max-width: 320px;
+    margin: 10px;
+}
+
+.product-title{
+    font-family: 'Abel', sans-serif;
+    top: 173px;
+    left: 20px;
+    border-radius: 10px;
+    color: #009EFF;
+    font-size: 24px;
+    text-transform: capitalize;
+    display: block;
+}
+
+.address-title{
+    font-family: 'Abel', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 20.39px;
+
+}
+
+.payment-box{
+    width: 49%;
+    height: 62px;
+    top: 157px;
+    left: 20px;
+    border-radius: 10px;
+    background-color: #D9FAFF;
+    margin-bottom: 11px;
+    padding: 20px;
+}
